@@ -1,0 +1,20 @@
+
+import java.util.Scanner;
+public class LargestWord {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        
+        System.out.println("Enter a senten :");
+        String sentence = sc.nextLine();
+        
+        String[] words = sentence.split(" ");
+        String largestWord = "";
+        for (String word : words) {
+            if (word.length() > largestWord.length()) {
+                largestWord = word;
+            }
+        }
+    
+        System.out.println("The largest word is: " + largestWord);
+        System.out.println("Length of the word: " + largestWord.length());
+ 
