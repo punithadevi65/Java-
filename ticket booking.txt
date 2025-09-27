@@ -1,0 +1,55 @@
+
+import java.util.Scanner;
+public class TrainTicket {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("1. Ticket Booking");
+        System.out.println("2. Ticket Cancellation");
+        System.out.print("Enter your choice: ");
+        int choice = scanner.nextInt();
+        scanner.nextLine();
+        if (choice == 1) {
+            
+            System.out.print("Enter your departure place: ");
+            String departure = scanner.nextLine();
+            System.out.print("Enter destination: ");
+            String destination = scanner.nextLine();
+            System.out.print("Enter your name: ");
+            String name = scanner.nextLine();
+            System.out.print("Enter number of tickets: ");
+            int totalTickets = scanner.nextInt();
+            System.out.print("Enter your contact number: ");
+            long contactNumber = scanner.nextLong();
+            System.out.print("Enter the number of adults: ");
+            int numAdults = scanner.nextInt();
+            System.out.print("Enter the number of children: ");
+            int numChildren = scanner.nextInt();
+            System.out.print("Enter the number of disabled people: ");
+            int numDisabled = scanner.nextInt();
+            
+            int cost = numAdults * 100 + numChildren * 50 + numDisabled * 30;
+            System.out.println("Total Cost: ₹" + cost);
+            System.out.println("Do you want to confirm the booking?");
+            System.out.println("1. Yes\n2. No");
+            int confirm = scanner.nextInt();
+            if (confirm == 1) {
+                System.out.println("Booking Confirmed!");
+                System.out.println("Thank you, " + name + ". Safe travels from " + departure + " to " + destination + ".");
+            } else {
+                System.out.println("Booking Cancelled.");
+            }
+        } else if (choice == 2) {
+            
+            System.out.println("Processing cancellation...");
+            System.out.print("Enter the ticket number: ");
+            long ticketNumber = scanner.nextLong();
+            System.out.print("Enter the number of tickets booked: ");
+            int bookedTickets = scanner.nextInt();
+            int refund = bookedTickets * 45;
+            System.out.println("A refund of ₹" + refund + " will be processed within 12 business days.");
+        } else {
+            System.out.println("Invalid choice. Please restart the program.");
+        }
+        scanner.close();
+    }
+}
